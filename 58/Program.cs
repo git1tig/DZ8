@@ -27,29 +27,22 @@ void printArray(int[,] array)
 
 int[,] matrixMultiply(int[,] arr1, int[,] arr2)
 {
-    int maxDim = 0;
-    int strMoreCols=0;
-    int colsMoreStr=0;
-    int dif=0;
-    if (arr1.GetLength(0) != arr2.GetLength(1) || arr1.GetLength(1) != arr2.GetLength(0))
+    int[,] result = new int[arr1.GetLength(0), arr2.GetLength(1)];
+    if (arr1.GetLength(1) != arr2.GetLength(0))
+
     {
-         Console.WriteLine("Неподходящие размеры матриц!");
-
+        Console.WriteLine("Неподходящие размеры матриц!!! ");
     }
-    if (arr1.GetLength(0) > arr1.GetLength(1)) maxDim = arr1.GetLength(0);
-    else maxDim = arr1.GetLength(1);
-    int[,] result = new int[arr1.GetLength(1), arr2.GetLength(0)];   
-
 
     for (int i = 0; i < result.GetLength(0); i++)
     {
         for (int j = 0; j < result.GetLength(0); j++)
         {
-            for (int s = 0; s < maxDim; s++)
+            for (int s = 0; s < arr2.GetLength(0); s++)
             {
                 result[i, j] = result[i, j] + arr1[i, s] * arr2[s, j];
-                Console.WriteLine($"Умножаем {arr1[i, s]} на {arr2[s, j]}");
-                Console.WriteLine($"Теперь res({i},{j}) = {result[i, j]} i={i}, j= {j}? s={s}");
+                // Console.WriteLine($"Умножаем {arr1[i, s]} на {arr2[s, j]}");
+                // Console.WriteLine($"Теперь res({i},{j}) = {result[i, j]} i={i}, j= {j}? s={s}");
             }
         }
 
@@ -57,9 +50,17 @@ int[,] matrixMultiply(int[,] arr1, int[,] arr2)
     return result;
 }
 
-int[,] arrA = genRandArray(2, 3);
-int[,] arrB = genRandArray(3, 2);
+int[,] arrA = genRandArray(2, 2);
+int[,] arrB = genRandArray(2, 2);
+Console.WriteLine("Матрица1:");
+Console.WriteLine();
 printArray(arrA);
 Console.WriteLine();
+Console.WriteLine("Матрица2:");
+Console.WriteLine();
 printArray(arrB);
+Console.WriteLine();
+Console.WriteLine("Результат умножения:");
+Console.WriteLine();
 printArray(matrixMultiply(arrA, arrB));
+Console.WriteLine();
