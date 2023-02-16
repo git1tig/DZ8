@@ -5,9 +5,8 @@
 // 11 16 15 06
 // 10 09 08 07
 
-int[,] arr = new int[6, 6];
+int[,] arr = new int[7, 7];
 int bigNum = arr.GetLength(0) * arr.GetLength(1);
-int n = 1; // колшичество поворотов спирали
 int lastStr = 0;
 int lastCol = 0;
 int strMax = arr.GetLength(0);
@@ -44,13 +43,10 @@ for (int i = 1; i <= bigNum; i++)
             nowRow = false;
             strSteps = 0;
         }
-        Console.WriteLine($"nowRow={nowRow}, strpos={strPos}, colPos={colPos}, srSteps={strSteps}, nowRow={nowRow}, colMax={colMax} colCount ={colCount}, n={i}");
-        printArray(arr);
 
     }
     else
     {
-        Console.WriteLine($"strpos={strPos}, colPos={colPos}, srSteps={strSteps}, colSteps={colSteps}, nowRow={nowRow}, colMax={colMax} colCount ={colCount} n={i}");
         arr[strPos, colPos] = i;
 
         if (colFwd) strPos++;
@@ -70,8 +66,7 @@ for (int i = 1; i <= bigNum; i++)
             strCount++;
             colSteps = 0;
         }
-        Console.WriteLine($"strpos={strPos}, colPos={colPos}, colSteps={colSteps}, nowRow={nowRow}, colMax={colMax} colCount ={colCount} n={i}");
-        printArray(arr);
+
     }
 
 }
