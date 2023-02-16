@@ -5,7 +5,7 @@
 // 11 16 15 06
 // 10 09 08 07
 
-int[,] arr = new int[7, 7];
+int[,] arr = new int[7, 3];
 int bigNum = arr.GetLength(0) * arr.GetLength(1);
 int lastStr = 0;
 int lastCol = 0;

@@ -21,7 +21,7 @@ int[,] genRandArray(int rows, int cols)
     int[,] array = new int[rows, cols];
     Random randy = new Random();
     for (int i = 0; i < rows; i++)
-        for (int j = 0; j < cols; j++) array[i, j] = randy.Next(0, 20);
+        for (int j = 0; j < cols; j++) array[i, j] = randy.Next(0, 10);
 
     return array;
 }
@@ -47,8 +47,12 @@ int minArrStringSum(int[,] arr)
         {
             sum = sum + arr[i, j];
         }
-        if (sum < sumPrev) strMin = i;
-        sumPrev = sum;
+        if (sumPrev == 0) sumPrev = sum;
+        if (sum < sumPrev)
+        {
+            strMin = i;
+            sumPrev = sum;
+        }
         sum = 0;
 
     }
