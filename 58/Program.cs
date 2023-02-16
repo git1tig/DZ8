@@ -32,6 +32,7 @@ int[,] matrixMultiply(int[,] arr1, int[,] arr2)
 
     {
         Console.WriteLine("Неподходящие размеры матриц!!! ");
+        return result;
     }
 
     for (int i = 0; i < result.GetLength(0); i++)
@@ -50,8 +51,8 @@ int[,] matrixMultiply(int[,] arr1, int[,] arr2)
     return result;
 }
 
-int[,] arrA = genRandArray(2, 2);
-int[,] arrB = genRandArray(2, 2);
+int[,] arrA = genRandArray(2, 5);
+int[,] arrB = genRandArray(5, 4);
 Console.WriteLine("Матрица1:");
 Console.WriteLine();
 printArray(arrA);
