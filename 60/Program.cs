@@ -19,12 +19,12 @@ int[,,] genRandArrayUniq(int firstDim, int secondDim, int thirdDim)
         for (int j = 0; j < secondDim; j++)
             for (int k = 0; k < thirdDim; k++)
             {
-                //Console.WriteLine($"Working on ({i},{j},{k})");
+                //Console.WriteLine($"Working on ({i},{j},{k})");  //debug
                 nonUniq = true;
                 while (nonUniq)
                 {
                     tempy = randy.Next(1, 9);
-                    //Console.WriteLine($"tempy= {tempy}");
+                    //Console.WriteLine($"tempy= {tempy}");  //debug
                     if (vocLength == 0)
                     {
                         array[i, j, k] = tempy;
@@ -41,7 +41,7 @@ int[,,] genRandArrayUniq(int firstDim, int secondDim, int thirdDim)
                             nonUniq = true;
                             break;
                         }
-                        //Console.Write($"tempy={tempy}, voc[{n}]={voc[n]}, tempy == voc[n] {tempy == voc[n]} nonunic={nonUniq} \n");
+                        //Console.Write($"tempy={tempy}, voc[{n}]={voc[n]}, tempy == voc[n] {tempy == voc[n]} nonunic={nonUniq} \n"); //debug
                     }
                     if (!nonUniq)
                     {
